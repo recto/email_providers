@@ -60,22 +60,22 @@ the application.
   application. Please find "src/resources/providers.json".
 * Open "src/resources/providers.json" with text editor and modify as needed.
   Here is a sample.
-  ```python
-  { "default" : "mailgun_email",  <-- Default mail provider.
-    "providers": [
-      { "name": "mailgun_email", <-- You can name the mail provider as you like.
-        "type": "mailgun", <-- "type" should be set to either "mailgun" or "mandrill".
-        "url": "https://api.mailgun.net/v3/<your sandbox>.mailgun.org/messages",
-        "api_key": "<your API key given by Mailgun>"
-      },
-      { "name": "mandrill_email",
-        "type": "mandrill",
-        "url": "https://mandrillapp.com/api/1.0/messages/send.json",
-        "api_key": "<your API key given by Mandrill>"
-      }
-    ]
-  }
-  ```
+```python
+{ "default" : "mailgun_email",  <-- Default mail provider.
+  "providers": [
+    { "name": "mailgun_email", <-- You can name the mail provider as you like.
+      "type": "mailgun", <-- "type" should be set to either "mailgun" or "mandrill".
+      "url": "https://api.mailgun.net/v3/<your sandbox>.mailgun.org/messages",
+      "api_key": "<your API key given by Mailgun>"
+    },
+    { "name": "mandrill_email",
+      "type": "mandrill",
+      "url": "https://mandrillapp.com/api/1.0/messages/send.json",
+      "api_key": "<your API key given by Mandrill>"
+    }
+  ]
+}
+```
 * Save your changes.
 * Start the terminal or command prompt.
 * Go to the workspace where you checked out the application in the terminal.
@@ -86,22 +86,22 @@ the application.
   application. Otherwise, you can use <your workspace>/test/simple_app.py.
 * Open <your workspace>/test/simple_app.py and edit payload part with your
   email information.
-  ```python
-  def test_email():
-      payload = {
-          "to": "fake@example.com",
-          "to_name": "Ms. Fake",
-          "from": "noreply@uber.com",
-          "from_name": "Uber",
-          "subject": "A message from Uber.",
-          "body": "<h1>Your billing amount:</h1><p>$10</p>"
-      }
-      return requests.post(
-          "http://localhost:8000/email",
-          data=json.dumps(payload),
-          headers={"Content-Type" : "application/json"}
-      )
-  ```
+```python
+def test_email():
+    payload = {
+        "to": "fake@example.com",
+        "to_name": "Ms. Fake",
+        "from": "noreply@uber.com",
+        "from_name": "Uber",
+        "subject": "A message from Uber.",
+        "body": "<h1>Your billing amount:</h1><p>$10</p>"
+    }
+    return requests.post(
+        "http://localhost:8000/email",
+        data=json.dumps(payload),
+        headers={"Content-Type" : "application/json"}
+    )
+```
 * Save your changes.
 * Start the terminal or command prompt.
 * Go to the workspace where you checked out the application in the terminal.
@@ -118,56 +118,56 @@ the application.
   the different JSON file from the one for application.)
 * Open "test/resources/providers.json" with text editor and modify only
   placeholders. Here is a sample.
-  ```python
-  { "default" : "mailgun",
-    "providers": [
-      { "name": "mailgun",
-        "type": "mailgun",
-        "url": "https://api.mailgun.net/v3/<your sandbox>.mailgun.org/messages",
-        "api_key": "<your API key given by Mailgun>"
-      },
-      { "name": "mandrill",
-        "type": "mandrill",
-        "url": "https://mandrillapp.com/api/1.0/messages/send.json",
-        "api_key": "<your API key given by Mandrill>"
-      },
-      { "name": "mailgun_with_wrong_key",
-        "type": "mailgun",
-        "url": "https://api.mailgun.net/v3/sandbox.mailgun.org/messages",
-        "api_key": "key-wrong"
-      },
-      { "name": "missing_url",
-        "type": "mailgun",
-        "api_key": "any-key"
-      }
-    ]
-  }
-  ```
+```python
+{ "default" : "mailgun",
+  "providers": [
+    { "name": "mailgun",
+      "type": "mailgun",
+      "url": "https://api.mailgun.net/v3/<your sandbox>.mailgun.org/messages",
+      "api_key": "<your API key given by Mailgun>"
+    },
+    { "name": "mandrill",
+      "type": "mandrill",
+      "url": "https://mandrillapp.com/api/1.0/messages/send.json",
+      "api_key": "<your API key given by Mandrill>"
+    },
+    { "name": "mailgun_with_wrong_key",
+      "type": "mailgun",
+      "url": "https://api.mailgun.net/v3/sandbox.mailgun.org/messages",
+      "api_key": "key-wrong"
+    },
+    { "name": "missing_url",
+      "type": "mailgun",
+      "api_key": "any-key"
+    }
+  ]
+}
+```
 * Save your changes.
 * Open "test/resources/payloads.json" with your text editor and modify only
   placeholders. Here is a sample.
-  ```python
-  { "payloads" : [
-      {
-        "testcase" : "1",
-        "to": "<your target address>",
-        "to_name": "Ms. Fake",
-        "from": "<your email address>",
-        "from_name": "Uber",
-        "subject": "Billing Information",
-        "body": "<h1>Your billing amount:</h1><p>$10</p>"
-      },
-      {
-        "testcase" : "2",   <-- this test case 2 is missing body on purpose.
-        "to": "<your target address>",
-        "to_name": "Ms. Fake",
-        "from": "<your email address>",
-        "from_name": "Uber",
-        "subject": "Billing Information",
-      }
-    ]
-  }
-  ```
+```python
+{ "payloads" : [
+    {
+      "testcase" : "1",
+      "to": "<your target address>",
+      "to_name": "Ms. Fake",
+      "from": "<your email address>",
+      "from_name": "Uber",
+      "subject": "Billing Information",
+      "body": "<h1>Your billing amount:</h1><p>$10</p>"
+    },
+    {
+      "testcase" : "2",   <-- this test case 2 is missing body on purpose.
+      "to": "<your target address>",
+      "to_name": "Ms. Fake",
+      "from": "<your email address>",
+      "from_name": "Uber",
+      "subject": "Billing Information",
+    }
+  ]
+}
+```
 * Save your changes.
 * Start the terminal or command prompt.
 * Go to the workspace where you checked out the application in the terminal.
