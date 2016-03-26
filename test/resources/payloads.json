@@ -1,0 +1,20 @@
+{ "payloads" : [
+    {
+      "testcase" : "1",
+      "to": "<your target address>",
+      "to_name": "Ms. Fake",
+      "from": "<your email address>",
+      "from_name": "Uber",
+      "subject": "Billing Information",
+      "body": "<h1>Your billing amount:</h1><p>$10</p>"
+    },
+    {
+      "testcase" : "2",
+      "to": "<your target address>",
+      "to_name": "Ms. Fake",
+      "from": "<your email address>",
+      "from_name": "Uber",
+      "subject": "Billing Information",
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{ "default" : "mailgun",
+  "providers": [
+    { "name": "mailgun",
+      "type": "mailgun",
+      "url": "https://api.mailgun.net/v3/<your sandbox>.mailgun.org/messages",
+      "api_key": "<your API key given by Mailgun>"
+    },
+    { "name": "mandrill",
+      "type": "mandrill",
+      "url": "https://mandrillapp.com/api/1.0/messages/send.json",
+      "api_key": "<your API key given by Mandrill>"
+    },
+    { "name": "mailgun_with_wrong_key",
+      "type": "mailgun",
+      "url": "https://api.mailgun.net/v3/sandbox.mailgun.org/messages",
+      "api_key": "key-wrong"
+    },
+    { "name": "missing_url",
+      "type": "mailgun",
+      "api_key": "any-key"
+    }
+  ]
+}
