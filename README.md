@@ -60,7 +60,7 @@ the application.
   application. Please find "src/resources/providers.json".
 * Open "src/resources/providers.json" with text editor and modify as needed.
   Here is a sample.
-  ```
+  ```python
   { "default" : "mailgun_email",  <-- Default mail provider.
     "providers": [
       { "name": "mailgun_email", <-- You can name the mail provider as you like.
@@ -86,7 +86,7 @@ the application.
   application. Otherwise, you can use <your workspace>/test/simple_app.py.
 * Open <your workspace>/test/simple_app.py and edit payload part with your
   email information.
-  ```
+  ```python
   def test_email():
       payload = {
           "to": "fake@example.com",
@@ -118,7 +118,7 @@ the application.
   the different JSON file from the one for application.)
 * Open "test/resources/providers.json" with text editor and modify only
   placeholders. Here is a sample.
-  ```
+  ```python
   { "default" : "mailgun",
     "providers": [
       { "name": "mailgun",
@@ -146,7 +146,7 @@ the application.
 * Save your changes.
 * Open "test/resources/payloads.json" with your text editor and modify only
   placeholders. Here is a sample.
-  ```
+  ```python
   { "payloads" : [
       {
         "testcase" : "1",
